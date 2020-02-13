@@ -1,0 +1,112 @@
+body {
+    background: radial-gradient(121.34% 121.34% at 50% 50%, #E16868 0%, rgba(150, 135, 135, 0) 100%), #F37C7C;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.defs {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    width: 280px;
+    height: 480px;
+    position: relative;
+    perspective: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: calc(50vh - 240px);
+    cursor: pointer;
+}
+
+.card.open .front {
+    transform: rotateY(-90deg);
+}
+
+.card.open .back {
+    transform: rotateY(0deg);
+}
+
+
+.card.open .face {
+    transition: all 0.3s ease-out;
+}
+
+.face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    transition: all 0.5s ease-out;
+    transform-origin: 0 0;
+}
+
+.front {
+    background: #d63e3e;
+    transform: rotateY(0deg);
+    z-index: 2;
+}
+
+.face.front img {
+    display: block;
+    margin: 40px auto;
+    width: 90%;
+    height: auto;
+}
+
+.face.front .text {
+    font-family: 'Indie Flower', cursive;
+    font-size: 24px;
+    text-align: center;
+    color: white;
+}
+
+.back {
+    background: #f5abab;
+    transform: rotateY(0deg);
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.back .stanza {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.back .stanza:first-child {
+    text-align: left;
+}
+
+.back .stanza:last-child {
+    text-align: right;
+}
+
+.back .stanza p {
+    font-family: 'Indie Flower', cursive;
+    margin-bottom: 4px;
+}
+
+/* Not related */
+* {
+    box-sizing: border-box;
+}
+
+.back {
+    padding: 3em;
+}
+
+.star .image {
+    clip-path: url(#star-clip);
+    background-image: url("rohan-mustu.jpg")
+}
